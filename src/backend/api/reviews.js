@@ -18,7 +18,7 @@ router.get("/", (request, response) => {
 router.post("/", (req, res) => {
   const review = req.body;
   console.log("review:", review);
-  pool.query("INSERT into review SET ?", review, (error, results, fields) => {
+  pool.query("INSERT INTO review SET ?", review, (error, results, fields) => {
     if (error) {
       return res.send(error);
     }

@@ -5,7 +5,7 @@ const reservationRouter = require("./api/reservation");
 const reviewsRouter = require("./api/reviews");
 const router = express.Router();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5005;
 // For week4 no need to look into this!
  const path = require("path"); 
  // Serve the built client html
@@ -16,6 +16,8 @@ app.use(express.static(buildPath));
 app.use(express.urlencoded({ extended: true }));
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
+// middleware
+app.use(express.static('public'));
 
 router.use("/meals", mealsRouter);
 router.use("/reservations", reservationRouter);
