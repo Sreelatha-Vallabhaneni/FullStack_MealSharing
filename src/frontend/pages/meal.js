@@ -10,7 +10,15 @@ function mealsId(req, router) {
   
 }
 function renderSingleMeal(meal){
-    document.body.innerHTML = `<section id="single-meal">
+    document.body.innerHTML = `
+    <header>
+    <a href="./"><img class="logo" src="../images/logo2.png" alt="meal sharing logo"></a>
+    <nav>
+      <a href="./meals"><p>Create Meal</p></a>
+      <a href="#"><p>Create Review</p></a>
+    </nav>
+  </header>
+    <section id="single-meal">
     <div class="single-meal">
       <img class="single-meal-image" src=${meal[0].image}>
       <div class="single-meal-info">
@@ -24,7 +32,7 @@ function renderSingleMeal(meal){
          <li>Max-Reservations:   ${meal[0].max_reservations}</li>
          <li>Created Date:   ${meal[0].created_date}</li>
        </ul></b>
-       
+       <button type="button" class="btn btn-warning">Book Seat</button>
       </div>  
     </div>  
     <form method="POST" action="api/meals/${meal.id}">
@@ -47,26 +55,19 @@ function renderSingleMeal(meal){
     </div>
   </div>  
   </form>
-  <button type="button" class="btn btn-success">Submit</button>
-  <form class="review-container" method="POST">    
-    <input type="text" class="review-title" placeholder="Enter review title">
-    <textarea rows="4" cols="50" class="review-area" placeholder="Enter review"></textarea>
-    <button type="button" class="btn btn-primary">Send Review</button>
-  </form>
+  <button type="button" class="btn btn-success">Send</button>  
   </section>`;
    
 //event listener to book a seat
-  /*const button = document.querySelector(".btn-warning");
+  const button = document.querySelector(".btn-warning");
   button.addEventListener("click", () => {
     if (meal[0].max_reservations > 0) {
       document.querySelector(".form-row").style.visibility  = "visible";
       document.querySelector(".btn-success").style.visibility = "visible";
-     // document.querySelector(".review-container").style.visibility = "visible";
-      //reviewForm(meal);
     } else{
       document.body.innerHTML = `<p>Sorry! No more reservations for this meal.</p>`
     }
-  });*/
+  });
 //create reservation using post method
 document.querySelector(".btn-success").addEventListener('click', () => {
   const phn = document.querySelector(".phn").value;
@@ -101,34 +102,6 @@ document.querySelector(".btn-success").addEventListener('click', () => {
       }
     });
   });  
-  document.querySelector('.btn-primary').addEventListener('click', () => {
-    const reviewTitle = document.querySelector(".review-title").value;
-    const reviewArea = document.querySelector(".review-area").value;
-    document.querySelector(".btn-primary").addEventListener("click", () => {
-      const today = new Date();
-      const todayDate =today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-      const createReview = {
-        "title": reviewTitle,
-        "description": reviewArea,
-        "meal_id": meal.id,
-        "created_date": todayDate
-      };
-      fetch("/api/reviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(createReview)
-      }).then(res => {
-        console.log(res);
-        if (res.status != 200) {
-          alert("Your review is not submitted, please try again");
-        } else {
-          alert("review submitted");
-        }
-      });
-    });
-  })
  }; 
 
 export default mealsId;
