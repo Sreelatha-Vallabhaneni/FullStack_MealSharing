@@ -38,6 +38,7 @@ function createMeal(req, router){
         <button id="submit-meal" class=" btn btn-danger">Create Meal</button>
     </div>     
     </form>
+    <ul class="ul-flex"></ul>
     `;
     document.getElementById("submit-meal").addEventListener("click", (e) => {        
         e.preventDefault();

@@ -32,7 +32,7 @@ function renderSingleMeal(meal){
          <li>Max-Reservations:   ${meal[0].max_reservations}</li>
          <li>Created Date:   ${meal[0].created_date}</li>
        </ul></b>
-       <button type="button" class="btn btn-warning">Book Seat</button>
+       <button type="button" class="btn btn-warning book-seat">Book Seat</button>
       </div>  
     </div>  
     <form method="POST" action="api/meals/${meal.id}">
@@ -60,11 +60,10 @@ function renderSingleMeal(meal){
   `;
    
 //event listener to book a seat
-  const button = document.querySelector(".btn-warning");
+  const button = document.querySelector(".book-seat");
   button.addEventListener("click", () => {
     if (meal[0].max_reservations > 0) {
       document.querySelector(".form-row").style.visibility  = "visible";
-      document.querySelector(".btn-success").style.visibility = "visible";
     } else{
       document.body.innerHTML = `<p>Sorry! No more reservations for this meal.</p>`
     }
