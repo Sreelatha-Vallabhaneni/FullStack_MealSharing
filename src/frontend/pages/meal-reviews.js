@@ -4,7 +4,7 @@ function renderReview(meal) {
     <a href="./" class="a-logo"><img class="logo" src="../images/logo2.png" alt="meal sharing logo"></a>
     <nav>
       <a href="./meals"><p>Create Meal</p></a>
-      <a href="#"><p>Create Review</p></a>
+      <a href="./reviews"><p>Create Review</p></a>
     </nav>
   </header>
   <form class="review-container" method="POST">    

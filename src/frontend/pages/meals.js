@@ -6,7 +6,7 @@ function createMeal(req, router){
     <a href="./"><img class="logo" src="../images/logo2.png" alt="meal sharing logo"></a>
     <nav>
       <a href="./meals"><p>Create Meal</p></a>
-      <a href="#"><p>Create Review</p></a>
+      <a href="./reviews"><p>Create Review</p></a>
     </nav>
   </header>
     <form method="POST>
@@ -37,7 +37,8 @@ function createMeal(req, router){
         </div>           
         <button id="submit-meal" class=" btn btn-danger">Create Meal</button>
     </div>     
-    </form>`;
+    </form>
+    `;
     document.getElementById("submit-meal").addEventListener("click", (e) => {        
         e.preventDefault();
         if(document.querySelector(".c-meal").value !== ""){

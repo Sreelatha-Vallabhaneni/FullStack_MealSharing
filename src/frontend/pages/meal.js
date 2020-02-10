@@ -6,16 +6,16 @@ function mealsId(req, router) {
   .then(meal => {
     console.log(meal);   
     renderSingleMeal(meal);    
-  })
-  
+  })  
 }
+
 function renderSingleMeal(meal){
     document.body.innerHTML = `
     <header>
     <a href="./"><img class="logo" src="../images/logo2.png" alt="meal sharing logo"></a>
     <nav>
       <a href="./meals"><p>Create Meal</p></a>
-      <a href="#"><p>Create Review</p></a>
+      <a href="./reviews"><p>Create Review</p></a>
     </nav>
   </header>
     <section id="single-meal">
@@ -53,10 +53,11 @@ function renderSingleMeal(meal){
       <label for="exampleFormControlInput1">No.Of Guests:</label>
       <input type="number" class="form-control guests" placeholder="Enter Number">
     </div>
-  </div>  
-  </form>
-  <button type="button" class="btn btn-success">Send</button>  
-  </section>`;
+    <button type="button" class="btn btn-success resrvation-btn">Send</button>
+  </div>   
+  </form>    
+  </section>
+  `;
    
 //event listener to book a seat
   const button = document.querySelector(".btn-warning");
