@@ -5,8 +5,7 @@ function renderAllMeals() {
       console.log(meals);
       //const ul = document.createElement("ul");
       const ul = document.querySelector('.ul-flex');
-      //ul.classList.add("ul-flex");
-      //document.body.appendChild(ul);
+      
       meals.forEach(meal => {
         const li = document.createElement("li");
         li.classList.add("li-flex");
