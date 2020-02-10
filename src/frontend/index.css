@@ -181,7 +181,6 @@ h2, .title-subtitle, .single-meal-title{
     width: 100%;
 }
 /*********footer*******/
-
 footer{
      background-image: url('/images/footer99.jpg');
     width: 100%;
@@ -224,5 +223,4 @@ footer{
         width: 100%;
         margin-left: 0;
     }
-
 }
