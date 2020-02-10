@@ -3,9 +3,7 @@ function renderAllMeals() {
     .then(res => res.json())
     .then(meals => {
       console.log(meals);
-      //const ul = document.createElement("ul");
-      const ul = document.querySelector('.ul-flex');
-      
+      const ul = document.querySelector('.ul-flex');      
       meals.forEach(meal => {
         const li = document.createElement("li");
         li.classList.add("li-flex");
