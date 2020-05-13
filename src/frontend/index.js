@@ -1,5 +1,6 @@
 import "./index.css";
 
+
 import SPARouter from "@kodnificent/sparouter";
 
 import mealRouter from "./pages/meal";

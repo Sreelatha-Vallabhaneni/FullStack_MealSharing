@@ -18,12 +18,16 @@ router.get("/", (request, response) => {
 //Adds a new reservation	       POST api/reservations/
 router.post("/", (req, res) => {
   const reservation = req.body;
-  pool.query("INSERT INTO reservation SET ?", reservation, (error, results, fields) => {
+  pool.query(
+    "INSERT INTO reservation SET ?",
+    reservation,
+    (error, results, fields) => {
       if (error) {
         return res.send(error);
       }
       res.json(results);
-    });
+    }
+  );
 });
 //Returns reservation by id                   GET api/reservations/2
 router.get("/:id", (req, res) => {

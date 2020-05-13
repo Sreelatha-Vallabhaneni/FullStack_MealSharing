@@ -79,19 +79,15 @@ ul{
 }
 /*********style create meal form **********/
 .c-meal-flex{
-    margin: 20px 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    text-align: justify;    
+    justify-content: space-around;
+    padding: 10px;
+    color: rgb(235, 6, 63);
 }
-.c-meal{
-    text-align: center;
-}
-#submit-meal{
-    margin: 5px 0 5px 30rem;
+.c-meal-flex input{
+    width: 40%;
 }
 /**** render single meal****/
 .single-meal-info{

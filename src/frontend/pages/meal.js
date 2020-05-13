@@ -35,7 +35,7 @@ function renderSingleMeal(meal){
        <button type="button" class="btn btn-warning book-seat">Book Seat</button>
       </div>  
     </div>  
-    <form method="POST" action="api/meals/${meal.id}">
+    <form method="POST">
   <div class="form-row">
     <div class="col">
       <label for="exampleFormControlInput1">Phone Number:</label>
@@ -80,7 +80,6 @@ document.querySelector(".btn-success").addEventListener('click', () => {
     "email": email,
     "number_of_guests": guests,
     "meal_id" : meal.id
-    //"created_date": "2020-01-15"
   };
   fetch("/api/reservations", {
     method: "POST",
@@ -105,4 +104,3 @@ document.querySelector(".btn-success").addEventListener('click', () => {
  }; 
 
 export default mealsId;
-//export default ;
